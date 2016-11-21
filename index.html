@@ -13,22 +13,30 @@
       <h1>Sigmanaut's angular list</h1>
       <h3>Add a new person</h3>
       <form class="col-md-12">
-        <div class="form-group col-md-5">
-          <!-- <label for="firstName">First Name</label> -->
+        <div class="form-group col-md-6">
+          <label for="firstName">First Name</label>
           <input type="text" name="firstName" class="form-control" ng-model="sigmanaut.newPerson.firstName" placeholder="First Name"/>
         </div>
-        <div class="form-group col-md-5">
-          <!-- <label for="lastName">Last Name</label> -->
+        <div class="form-group col-md-6">
+          <label for="lastName">Last Name</label>
           <input type="text" name="lastName" class="form-control" ng-model="sigmanaut.newPerson.lastName" placeholder="Last Name"/>
         </div>
-        <button type="submit" ng-click="sigmanaut.createPerson()" class="form-group btn col-md-2">Add to List</button>
+        <div class="form-group col-md-6">
+          <label for="git_username">GitHub Username</label>
+          <input type="text" name="git_username" class="form-control" ng-model="sigmanaut.newPerson.git_username" placeholder="GitHub Username"/>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="shoutout">Shoutout</label>
+          <input type="text" name="shoutout" class="form-control" ng-model="sigmanaut.newPerson.shoutout" placeholder="Shoutout"/>
+        </div>
+        <button type="submit" ng-click="sigmanaut.createPerson()" class="form-group btn btn-primary col-md-2">Add to List</button>
       </form>
     </section>
     <section class="container">
       <h3>Class List</h3>
       <ul class="list-group">
         <li class="list-group-item" ng-repeat="person in sigmanaut.people">
-          {{person.firstName}} {{person.lastName}} — <em>{{person.shoutout}}</em>
+          <a ng-href="http://github.com/{{person.git_username}}">{{person.firstName}} {{person.lastName}}</a> — <em>{{person.shoutout}}</em>
         </li>
       </ul>
     </section>
