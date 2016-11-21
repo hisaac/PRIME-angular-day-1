@@ -13,19 +13,22 @@
       <h1>Sigmanaut's angular list</h1>
       <h3>Add a new person</h3>
       <form class="col-md-12">
-        <div class="form-group col-md-6">
-          <label for="firstName">First Name</label>
+        <div class="form-group col-md-5">
+          <!-- <label for="firstName">First Name</label> -->
           <input type="text" name="firstName" class="form-control" ng-model="sigmanaut.newPerson.firstName" placeholder="First Name"/>
         </div>
-        <!-- What other fields do we need to ask for in order to get the information we need? -->
+        <div class="form-group col-md-5">
+          <!-- <label for="lastName">Last Name</label> -->
+          <input type="text" name="lastName" class="form-control" ng-model="sigmanaut.newPerson.lastName" placeholder="Last Name"/>
+        </div>
+        <button type="submit" ng-click="sigmanaut.createPerson()" class="form-group btn col-md-2">Add to List</button>
       </form>
     </section>
     <section class="container">
       <h3>Class List</h3>
       <ul class="list-group">
-        <li class="list-group-item" ng-repeat=""> <!-- What needs to be repeated? -->
-          <!-- TODO: Create a list item for everyone in the class -->
-          {{person.firstName}}<!-- include the other parameters for the person -->
+        <li class="list-group-item" ng-repeat="person in sigmanaut.people">
+          {{person.firstName}} {{person.lastName}} — <em>{{person.shoutout}}</em>
         </li>
       </ul>
     </section>
