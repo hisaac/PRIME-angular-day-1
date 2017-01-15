@@ -1,4 +1,9 @@
 # Angular Intro
+
+This was my first interaction with Angular. What a strange new world, especially coming from jQuery. Of course I've now come to love Angular's powerful magic.
+
+---
+
 The goal of this assignment is to update the index.html file to add a new person to the array and display the first name, last name, and shoutout in their own row.
 ![Solution Image](images/solution.png)
 
